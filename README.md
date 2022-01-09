@@ -40,10 +40,10 @@ Modification :
 
 code
 
-OUVRIR DOSSIER : c:\User\PatrickR\cargo\pov <Valider>
+OUVRIR DOSSIER : c:\User\PatrickR\cargo\pov "Valider"
 
 MODIFICATION : main.rs <Ctrl+S>
 
-CONTROLE DE CODE : Message :  Vn : <Valider>
+CONTROLE DE CODE : Message :  Vn : "Valider"
  
-CONTROLE DE CODE : Synchronisation : <Valider>
+CONTROLE DE CODE : Synchronisation : "Valider"
