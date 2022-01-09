@@ -23,7 +23,7 @@ git commit -m "init"
 
 git push -u origin master
 
-veriification :
+verification :
 =============
 
 git branch -a
