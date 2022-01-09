@@ -26,7 +26,7 @@ git commit -m "init"
 
 git push -u origin master
 
-verification :
+Verification :
 =============
 
 git branch -a
@@ -34,3 +34,16 @@ git branch -a
 git branch devops
 
 git checkout master ou devops
+
+Modification :
+============
+
+code
+
+OUVRIR DOSSIER : c:\User\PatrickR\cargo\pov <Valider>
+
+MODIFICCATION : main.rs <Ctrl+S>
+
+CONTROLE DE CODE : Message :  Vn : <Valider>
+ 
+CONTROLE DE CODE : Synchronisation : <Valider>
