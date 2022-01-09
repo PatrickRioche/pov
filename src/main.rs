@@ -15,7 +15,7 @@ fn main() {
     //
     //  Initialisation de variable
     //
-	let mut compteur:i32 = 1;
+	let mut compteur:i32 = 0;
 	let mut sens = String::from(">");
     
     println!("POV:");
@@ -39,7 +39,7 @@ fn main() {
             if n == 'q' { process::exit(0); }
 			if n == '>' { sens = String::from(">") }
 			if n == '<' { sens = String::from("<") }
-			if n == 'z' { compteur = 1; }
+			if n == 'z' { compteur = 0; }
 			if n == 'm' { compteur = 5000;}
         }
 
