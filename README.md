@@ -42,7 +42,7 @@ code
 
 OUVRIR DOSSIER : c:\User\PatrickR\cargo\pov <Valider>
 
-MODIFICCATION : main.rs <Ctrl+S>
+MODIFICATION : main.rs <Ctrl+S>
 
 CONTROLE DE CODE : Message :  Vn : <Valider>
  
