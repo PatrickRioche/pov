@@ -22,3 +22,12 @@ git remote add origin https://github.com/PatrickRioche/pov.git
 git commit -m "init"
 
 git push -u origin master
+
+veriification :
+=============
+
+git branch -a
+
+git branch devops
+
+git checkout master ou devops
