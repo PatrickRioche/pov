@@ -17,15 +17,18 @@ fn main() {
     //
 	let mut compteur:i32 = 0;
 	let mut sens = String::from(">");
-    
+	let mut input = String::new();
+
+	//
+	//	Debut 
+	//
+
     println!("POV:");
     loop {
 
-		let mut input = String::new();
-
 		match io::stdin().read_line(&mut input) {
 			Ok(_n) => {
-				//println!("{} bytes read", n);
+				//println!("{} bytes read", _n);
 				//println!("input ={}", input);
 			}
 			Err(error) => println!("error: {}", error),
@@ -34,14 +37,19 @@ fn main() {
    		//
 		//	Test si le caractere q a ete saisir au clavier
 		//
-		for n in input.chars() {
-            //println!("{}",n);
-            if n == 'q' { process::exit(0); }
-			if n == '>' { sens = String::from(">") }
-			if n == '<' { sens = String::from("<") }
-			if n == 'z' { compteur = 0; }
-			if n == 'm' { compteur = 5000;}
-        }
+		{
+    let input = &input;
+    let sens: &mut String = &mut sens;
+    let compteur: &mut i32 = &mut compteur;
+    for n in input.chars() {
+                //println!("{}",n);
+                if n == 'q' { process::exit(0); }
+			    if n == '>' { *sens = String::from(">") }
+			    if n == '<' { *sens = String::from("<") }
+			    if n == 'z' { *compteur = 0; }
+			    if n == 'm' { *compteur = 5000;}
+            }
+		};
 
 		//
 		//	En fonction du sens de rotation
@@ -53,7 +61,7 @@ fn main() {
 		if compteur < 1 { compteur = 1;}
 		if compteur > 4999 { compteur = 5000;}
 
-        println!("{}:{:4}", sens, compteur);
+        println!("{}:{:4}", sens, compteur);	
 
     }
 }
