@@ -13,7 +13,8 @@ fn main() {
     //
     //  Initialisation de variable
     //
-	let mut compteur:i8 = 1;
+	let mut compteur:i32 = 1;
+	let mut sens = String::from(">");
     
     println!("POV:");
     loop {
@@ -34,9 +35,20 @@ fn main() {
 		for n in input.chars() {
             //println!("{}",n);
             if n == 'q' { process::exit(0); }
+			if n == '+' { sens = String::from(">") }
+			if n == '-' { sens = String::from("<") }
+			if n == 'z' { compteur = 1; }
+			if n == 'm' { compteur = 5000;}
         }
-        println!("compteur : {}", compteur);
-		compteur = compteur + 1;
+
+		//
+		//	En fonction du sens de rotation
+		//
+
+		if sens == ">".to_string() { compteur = compteur + 1;}
+		if sens == "<".to_string() { compteur = compteur - 1;}
+
+        println!("{}:{}", sens, compteur);
 
     }
 }
