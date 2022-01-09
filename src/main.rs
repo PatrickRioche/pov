@@ -3,10 +3,12 @@
 //
 //
 //
-//#! [warn(dead_code)]
+//
+#! [warn(dead_code)]
 
 use std::io;
 use std::process;
+
 
 fn main() {
 
@@ -35,8 +37,8 @@ fn main() {
 		for n in input.chars() {
             //println!("{}",n);
             if n == 'q' { process::exit(0); }
-			if n == '+' { sens = String::from(">") }
-			if n == '-' { sens = String::from("<") }
+			if n == '>' { sens = String::from(">") }
+			if n == '<' { sens = String::from("<") }
 			if n == 'z' { compteur = 1; }
 			if n == 'm' { compteur = 5000;}
         }
@@ -48,7 +50,10 @@ fn main() {
 		if sens == ">".to_string() { compteur = compteur + 1;}
 		if sens == "<".to_string() { compteur = compteur - 1;}
 
-        println!("{}:{}", sens, compteur);
+		if compteur < 1 { compteur = 1;}
+		if compteur > 4999 { compteur = 5000;}
+
+        println!("{}:{:4}", sens, compteur);
 
     }
 }
