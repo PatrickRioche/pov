@@ -1,6 +1,9 @@
 # pov
 Porte Occulaire VMA
 
+Initialisation :
+==============
+
 cd cargo
 
 cargo new pov
