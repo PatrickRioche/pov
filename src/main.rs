@@ -15,24 +15,31 @@ const MOTORPIN1:u8 = 24;
 const _MOTORPIN2:u8 = 21;
 const _MOTORPIN3:u8 = 19;
 const _MOTORPIN4:u8 = 23;
-const MOTORSLEEP:u32 = 100;
+const MOTORSLEEP:u32 = 1000;
 
 
 
-fn clock(lookup:[u8;8]) {
+fn clock(lookup:[String;8]) {
 	let motorsleep = time::Duration::from_millis(MOTORSLEEP.into());
 	for av in &lookup {
-		println!("{}",av);
+		//println!("{}",av);
+		setoutput(av.to_string());
 		thread::sleep(motorsleep);
 	}
 }
 
-fn anticlock(lookup:[u8;8]) {
+fn anticlock(lookup:[String;8]) {
 	let motorsleep = time::Duration::from_millis(MOTORSLEEP.into());
 	for ar in &lookup {
-		println!("{}",ar);
+		//println!("{}",ar);
+		setoutput(ar.to_string());
 		thread::sleep(motorsleep);
 	}
+}
+
+fn setoutput(phase:String) {
+	println!("setoutput:");
+	println!("{}",phase.to_string());
 }
 
 fn main() {
@@ -43,10 +50,25 @@ fn main() {
 	let mut compteur:i32 = 0;
 	let mut sens = String::from(">");
 
-	let lookupav:[u8;8] = [8,12,4,6,2,3,1,9];
-	let lookupar:[u8;8] = [9,1,3,2,6,4,12,8];
-	
-	//let now = time::Instant::now();
+	let lookupav:[String;8] = [
+		"1000".to_string(),
+		"1100".to_string(),
+		"0100".to_string(),
+		"0110".to_string(),
+		"0010".to_string(),
+		"0011".to_string(),
+		"0001".to_string(),
+		"1001".to_string()];
+	let lookupar:[String;8] = [
+		"1001".to_string(),
+		"0001".to_string(),
+		"0011".to_string(),
+		"0010".to_string(),
+		"0110".to_string(),
+		"0100".to_string(),
+		"1100".to_string(),
+		"1000".to_string()];
+	 
 
     println!("MP1:{}", MOTORPIN1);
 	println!("clock");
