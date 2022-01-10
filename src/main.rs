@@ -9,23 +9,29 @@
 use std::io;
 use std::process;
 use rppal::gpio::Gpio;
+use std::{thread, time};
 
 const MOTORPIN1:u8 = 24;
 const _MOTORPIN2:u8 = 21;
 const _MOTORPIN3:u8 = 19;
 const _MOTORPIN4:u8 = 23;
+const MOTORSLEEP:u32 = 100;
+
 
 
 fn clock(lookup:[u8;8]) {
+	let motorsleep = time::Duration::from_millis(MOTORSLEEP.into());
 	for av in &lookup {
 		println!("{}",av);
+		thread::sleep(motorsleep);
 	}
 }
 
-fn anticlock(lookup:[u8;8
-	]) {
+fn anticlock(lookup:[u8;8]) {
+	let motorsleep = time::Duration::from_millis(MOTORSLEEP.into());
 	for ar in &lookup {
 		println!("{}",ar);
+		thread::sleep(motorsleep);
 	}
 }
 
@@ -40,7 +46,7 @@ fn main() {
 	let lookupav:[u8;8] = [8,12,4,6,2,3,1,9];
 	let lookupar:[u8;8] = [9,1,3,2,6,4,12,8];
 	
-	let _motorspeed:f32 = 0.005;
+	//let now = time::Instant::now();
 
     println!("MP1:{}", MOTORPIN1);
 	println!("clock");
