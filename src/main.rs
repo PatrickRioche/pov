@@ -40,6 +40,9 @@ fn anticlock(lookup:[String;8]) {
 fn setoutput(phase:String) {
 	println!("setoutput:");
 	println!("{}",phase.to_string());
+	for pin in phase.chars() {
+		println!("pin: {}",pin);
+	}
 }
 
 fn main() {
