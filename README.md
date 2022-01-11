@@ -4,13 +4,11 @@ Porte Occulaire VMA
 Initialisation :
 ==============
 
-cd cargo
+* cd cargo
+* cargo new pov
+* cd pov
 
-cargo new pov
-
-cd pov
-
-git init
+* git init
 
 git config --list --show-origin
 
